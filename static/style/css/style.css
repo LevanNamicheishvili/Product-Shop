@@ -4,4 +4,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root { 
+    --main-color : rgb(53, 106, 122) ;
+}
+
+
+header { 
+    padding: 20px;
+    background-color:var(
+        --main-color,
+        
+    );
+}
+nav { 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo { 
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav ul { 
+    display: flex;
+}
+li a { 
+    margin: 0 32px;
+    color:#ffffff
+}
+
+.registration { 
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: coral;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
