@@ -9,19 +9,28 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <span>Luka's Shop</span>
+        <nav class="navbar">
+            <div class="logo">Luka's Shop</div>
+                <ul class="navbar-links">
+
+                    <li ><a class="nav-link" href="#">Home</a></li>
+                    <li ><a class="nav-link" href="#">About Us</a></li>
+                    <li ><a class="nav-link" href="#">News</a></li>
+                    <li ><a class="nav-link" href="#">Contact</a></li>
+                    <input type="search" name="search" id="search" placeholder="Search">
+                </ul>
             </div>
-            <ul>
-                
-                <li class="nav_item"><a href="#">Home</a></li>
-                <li class="nav_item"><a href="#">About us</a></li>
-                <li class="nav_item"><a href="#">Contact</a></li>
-                <li class="nav_item"><a href="#">Products</a></li>
+                <div class="hamburger">
+                    <span class="bar">
             
-            </ul>
-            <button class="registration">Registration</button>
+                    </span>
+                    <span class="bar">
+            
+                    </span>
+                    <span class="bar">
+            
+                    </span>
+                </div>
         </nav>
     </header>
     <main>
@@ -31,7 +40,20 @@
             </div>
         </div>
     </main>
-    <footer></footer>  
-    <script src="./static/script/js/script.js"></script> 
+    <footer>
+        <div class="footer_items">
+            <div class="location">
+                <li class="footer_list_item">Office: example N25</li>
+                <li class="footer_list_item">From : City</li>
+                <li class="footer_list_item">Example : Something</li>
+            </div>
+            <div class="personal_info">
+                <li> T-Number : 55555555</li>
+                <li> Portfolio : example.com</li>
+                <li> working : example</li>
+            </div>
+        </div>
+    </footer>  
+    <script src="./static/script/js/app.js"></script> 
 </body>
 </html>

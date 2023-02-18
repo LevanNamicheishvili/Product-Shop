@@ -7,12 +7,9 @@
     text-decoration: none;
     list-style: none;
 }
-
 :root { 
     --main-color : rgb(53, 106, 122) ;
 }
-
-
 header { 
     padding: 20px;
     background-color:var(
@@ -31,18 +28,119 @@ nav {
 }
 nav ul { 
     display: flex;
+    align-items: center;
 }
 li a { 
     margin: 0 32px;
     color:#ffffff
 }
-
-.registration { 
+#search { 
     width: 200px;
     height: 40px;
     border-radius: 20px;
-    background-color: coral;
+    background-color: rgb(218, 196, 189);
     border: none;
+    padding: 20px;
     font-size: 20px;
+    text-align: center;
     cursor: pointer;
 }
+.container { 
+    height: 100vh;
+}
+
+
+.hamburger { 
+    display: none;
+    cursor: pointer;
+}
+.bar { 
+display: block;
+width: 36px;
+height: 6px;
+margin: 5px auto;
+transition: all 0.3 ease-in-out;
+background-color: rgb(255, 253, 253);
+}
+
+@media screen and (max-width:1162px) { 
+    .navbar-link{ 
+        display: none;
+    }
+   .navbar-links { 
+            position: absolute;
+            width: 100%;
+            background-color:rgb(2 9 26);
+            backdrop-filter: blur(8px);
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-left: -100%;
+            transition: all 0.5s ;
+            font-size: 30px;
+            height: 45vh;
+   }
+   .hamburger { 
+    display: block;
+   
+    left: 2rem;
+}
+.hamburger.active .bar:nth-child(2){ 
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1){ 
+    transform: translateY(7px) rotate(45deg);
+
+}
+.hamburger.active .bar:nth-child(3){ 
+  transform: translateY(-15px) rotate(-45deg);
+}
+.bar { 
+    transition: .3s ease;
+}
+.navbar-links.show{ 
+    margin-left: 0;
+    transition: 0.8s ease;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer*/
+footer  {
+    background-color:cadetblue;
+    height: 150px;
+    padding: 50px;
+}
+.footer_items { 
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
