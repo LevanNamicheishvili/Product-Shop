@@ -72,6 +72,9 @@ function loadProducts() {
           <p>Price: ${data.price}</p>
         `;
         mainSection.appendChild(card);
+      })
+      .catch(error => {
+        console.log(`Error fetching product data: ${error}`);
       });
   }
 }
