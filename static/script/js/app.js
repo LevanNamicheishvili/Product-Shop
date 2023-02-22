@@ -9,51 +9,15 @@ let pageNumber = 1;
 let activeIndex = 0;
 
 function closeHandler() {
-    for (const item of items) {
-        item.classList.remove('active');
-    }
+  for (const item of items) {
+    item.classList.remove('active');
+  }
 }
-
-list.addEventListener('click', (event) => {
-    if (event.target.tagName === 'LI') {
-        closeHandler();
-        event.target.classList.add('active');
-        activeIndex = Array.from(items).indexOf(event.target);
-        pageNumber = activeIndex + 1;
-        mainSection.innerHTML = '';
-        loadProducts();
-    }
-});
 
 function setActive(index) {
-    closeHandler();
-    items[index].classList.add('active');
+  closeHandler();
+  items[index].classList.add('active');
 }
-
-setActive(activeIndex);
-
-nextButton.addEventListener('click', () => {
-    activeIndex = (activeIndex + 1) % items.length;
-    setActive(activeIndex);
-    pageNumber++;
-    mainSection.innerHTML = '';
-    loadProducts();
-});
-
-prevBtn.addEventListener('click', () => {
-    activeIndex = (activeIndex - 1 + items.length) % items.length;
-    setActive(activeIndex);
-    pageNumber--;
-    mainSection.innerHTML = '';
-    loadProducts();
-});
-
-hamburger.addEventListener('click', () => { 
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('show');
-});
-
-loadProducts();
 
 function loadProducts() {
   for (let i = 1; i <= 10; i++) {
@@ -64,8 +28,8 @@ function loadProducts() {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-          <div class="card_img_frame" > 
-            <img src="${data.image}" alt="${data.title}" >
+          <div class="card_img_frame">
+            <img src="${data.image}" alt="${data.title}">
           </div>
           <h2>${data.title}</h2>
           <p>Category: ${data.category}</p>
@@ -78,3 +42,43 @@ function loadProducts() {
       });
   }
 }
+
+function handleListClick(event) {
+  if (event.target.tagName === 'LI') {
+    closeHandler();
+    event.target.classList.add('active');
+    activeIndex = Array.from(items).indexOf(event.target);
+    pageNumber = activeIndex + 1;
+    mainSection.innerHTML = '';
+    loadProducts();
+  }
+}
+
+function handleNextClick() {
+  activeIndex = (activeIndex + 1) % items.length;
+  setActive(activeIndex);
+  pageNumber++;
+  mainSection.innerHTML = '';
+  loadProducts();
+}
+
+function handlePrevClick() {
+  activeIndex = (activeIndex - 1 + items.length) % items.length;
+  setActive(activeIndex);
+  pageNumber--;
+  mainSection.innerHTML = '';
+  loadProducts();
+}
+
+function handleHamburgerClick() { 
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('show');
+}
+
+list.addEventListener('click', handleListClick);
+nextButton.addEventListener('click', handleNextClick);
+prevBtn.addEventListener('click', handlePrevClick);
+hamburger.addEventListener('click', handleHamburgerClick);
+
+setActive(activeIndex);
+loadProducts();
