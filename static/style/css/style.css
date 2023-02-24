@@ -67,10 +67,15 @@ li a {
     cursor: pointer;
 }
 .container { 
-    height: 200vh;
+    display: flex;
+    justify-content: center;
     padding: 93px;
+    height: 60vh;
 }
 
+main { 
+    height: 100vh;
+}
 
 .hamburger { 
     display: none;
@@ -134,7 +139,7 @@ background-color: rgb(255, 253, 253);
 .pagination { 
     display: flex;
     align-items: center;
-    
+    justify-content: center;
     background: #fff;
     color: #38383838;
     padding: 10px 40px;
