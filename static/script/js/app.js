@@ -71,7 +71,7 @@ const handlePrevClick = () => {
 
 };
 
-const handleHamburgerClick = () => { 
+const handleHamburgerClick = () => {
   hamburger.classList.toggle('active');
   navLinks.classList.toggle('show');
 };
